@@ -1,20 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
-  <title>Salary Calculator</title>
-</head>
-<body>
-  <header>
-    <h1>Salary Calculator</h1>
-  </header>
-  <main>
-    <h2>Add Employee</h2>
-    <h2>Employees</h2>
-  </main>
-  <footer>
-    <p>Total Monthly</p>
-  </footer>
-</body>
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <title>Salary Calculator</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Salary Calculator</h1>
+    </header>
+
+    <main>
+
+      <!-- This is where the input stuff happens -->
+      <section>
+        <h2>Add Employee</h2>
+
+        <form onsubmit="addEmployee(event)">
+          <input id="first_name" type="text" placeholder="First Name" required data-testid="firstNameInput">
+          <input id="last_name" type="text" placeholder="Last Name" required data-testid="lastNameInput">
+          <input id="id" type="text" placeholder="ID" required data-testid="idInput">
+          <input id="title" type="text" placeholder="Title" required data-testid="titleInput">
+          <input id="annual_salary" type="number" placeholder="Annual Salary" required data-testid="annualSalaryInput">
+
+          <button type="submit" data-testid="submitButton">Submit</button>
+        </form>
+
+      </section>
+
+      <!-- This is where the display stuff happens -->
+      <section>
+        <h2>Employees</h2>
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Annual Salary</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- <tr>
+              <td>Jen</td>
+              <td>Barber</td>
+              <td>4521</td>
+              <td>Team Lead</td>
+              <td>$80,000</td>
+              <td><button onclick="deleteEmployee()">Delete</button></td>
+            </tr> -->
+            <!-- keep adding rows, at the bottom of the tbody -->
+          </tbody>
+
+          <!-- TODO: gray bar at the bottom? -->
+
+        </table>
+
+      </section>
+
+      <div></div>
+
+    </main>
+
+    <!-- useful containers to add to HTML, so we can make it easier to target with selectors -->
+    <!-- span -->
+    <!-- span has default display type of: inline -->
+    <!-- this is our goto for text, most of the time -->
+
+    <!-- div -->
+    <!-- div has default display type of: block -->
+    <!-- we use div, if we're okay with the container taking up the whole width  -->
+
+    <!-- section -->
+    <!-- We use sections, when they make sense in context -->
+    <!-- We almost always use inside of a main tag -->
+    <!-- They should lump together a sensible chuck of content -->
+
+    <footer>
+      <p>Total Monthly: $<span>0</span></p>
+      <!-- gotta figure out this number total nonsese -->
+    </footer>
+  </body>
+
 </html>
